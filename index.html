@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Portfolio of Ravikanth R, a computer science student focused on predictive models, LLM integrations and data pipelines.">
+<title>Ravikanth R | AI/ML Engineer, in training</title>
+<style>
+  :root {
+    --bg: #f6f7f4;
+    --ink: #14211b;
+    --muted: #55645c;
+    --line: #d5dad3;
+    --accent: #1f6f54;
+    --panel: #ffffff;
+    --term-bg: #10231b;
+    --term-ink: #bfe8d3;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0f1713;
+      --ink: #e8efe9;
+      --muted: #94a69b;
+      --line: #25352c;
+      --accent: #5fcf9f;
+      --panel: #16221b;
+      --term-bg: #0a120e;
+      --term-ink: #bfe8d3;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: Georgia, "Times New Roman", serif;
+    line-height: 1.65;
+    font-size: 1.05rem;
+  }
+  h1, h2, h3, nav, .btn, .label, .stat b {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+  }
+  a { color: inherit; }
+  :focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+
+  header {
+    position: sticky; top: 0; z-index: 10;
+    background: var(--bg);
+    border-bottom: 1px solid var(--line);
+  }
+  nav {
+    max-width: 1000px; margin: 0 auto; padding: 14px 24px;
+    display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;
+  }
+  .brand { font-weight: 700; text-decoration: none; font-size: 1.05rem; }
+  .links { display: flex; gap: 20px; flex-wrap: wrap; font-size: .95rem; }
+  .links a { text-decoration: none; color: var(--muted); }
+  .links a:hover { color: var(--accent); }
+
+  section { max-width: 1000px; margin: 0 auto; padding: 80px 24px 0; }
+  .label { color: var(--accent); font-weight: 600; font-size: .95rem; margin-bottom: 10px; }
+  h1 { font-size: clamp(2.2rem, 6vw, 4rem); line-height: 1.1; letter-spacing: -0.02em; max-width: 16em; }
+  h1 em { color: var(--accent); }
+  h2 { font-size: clamp(1.6rem, 4vw, 2.2rem); line-height: 1.2; margin-bottom: 20px; max-width: 20em; }
+  p { max-width: 62ch; color: var(--muted); }
+  .lead { margin-top: 22px; font-size: 1.15rem; }
+
+  .actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 30px; }
+  .btn {
+    display: inline-block; padding: 12px 22px; border-radius: 6px; text-decoration: none;
+    font-weight: 600; border: 2px solid var(--accent);
+  }
+  .btn.primary { background: var(--accent); color: var(--bg); }
+  .btn.ghost { color: var(--accent); }
+
+  .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-top: 48px; }
+  .stat { border-left: 3px solid var(--accent); padding: 4px 0 4px 16px; }
+  .stat span { display: block; font-size: .9rem; color: var(--muted); }
+  .stat b { font-size: 1.5rem; }
+
+  .chips { display: flex; flex-wrap: wrap; gap: 10px; list-style: none; }
+  .chips li {
+    padding: 8px 16px; border: 1px solid var(--line); border-radius: 999px;
+    background: var(--panel); font-family: "Helvetica Neue", Arial, sans-serif; font-size: .95rem;
+  }
+
+  .project {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 28px; align-items: start;
+    background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 28px;
+  }
+  .project h3 { font-size: 1.4rem; margin-bottom: 10px; }
+  .project .chips { margin-top: 18px; }
+  pre {
+    background: var(--term-bg); color: var(--term-ink); padding: 20px; border-radius: 8px;
+    font-family: "Courier New", monospace; font-size: .9rem; line-height: 1.5; overflow-x: auto;
+  }
+
+  .edu { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
+  .edu div { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 24px; }
+  .edu strong { display: block; font-family: "Helvetica Neue", Arial, sans-serif; font-size: 2.4rem; color: var(--accent); line-height: 1.1; }
+  .edu h3 { font-size: 1.1rem; margin: 8px 0 4px; }
+  .edu p { font-size: .95rem; }
+
+  footer { max-width: 1000px; margin: 80px auto 0; padding: 24px; border-top: 1px solid var(--line); color: var(--muted); font-size: .9rem; }
+
+  @media (max-width: 720px) {
+    .project { grid-template-columns: 1fr; }
+    section { padding-top: 60px; }
+  }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+</style>
+</head>
+<body>
+
+<header>
+  <nav aria-label="Main">
+    <a class="brand" href="#home">Ravikanth</a>
+    <div class="links">
+      <a href="#home">Home</a>
+      <a href="#profile">Profile</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <section id="home">
+    <div class="label">AI/ML Engineer, in training</div>
+    <h1>I build systems that <em>learn</em>, and code that holds up.</h1>
+    <p class="lead">I'm Ravikanth R — a computer science student focused on predictive models, LLM integrations, and the data pipelines that keep them fed. I like the parts of engineering that don't show up in a demo: clean logic, reliable data, and code a team can actually maintain.</p>
+    <div class="actions">
+      <a class="btn primary" href="#contact">Get in touch</a>
+      <a class="btn ghost" href="#projects">See my work</a>
+    </div>
+    <div class="stats">
+      <div class="stat"><span>Current CGPA</span><b>6.5</b></div>
+      <div class="stat"><span>HSC score</span><b>93.5%</b></div>
+      <div class="stat"><span>Core languages</span><b>Python · C · C++</b></div>
+    </div>
+  </section>
+
+  <section id="profile">
+    <div class="label">Profile</div>
+    <h2>Interested in the engineering behind intelligent software</h2>
+    <p>I'm passionate about creating intelligent software that pushes the boundaries of innovation. With a foundation in computer science and data engineering, I'm learning to design and optimize predictive models, LLM integrations, and automated data pipelines — and I like collaborating across teams to turn a user need into an AI feature that feels seamless and efficient.</p>
+    <p style="margin-top:16px"><strong style="color:var(--ink)">Always learning</strong> — new tools, new problems, new ways to ship faster.</p>
+  </section>
+
+  <section id="skills">
+    <div class="label">Skills</div>
+    <h2>What I work with</h2>
+    <ul class="chips">
+      <li>Python</li><li>C</li><li>C++</li><li>MS Office</li>
+      <li>Data Structures</li><li>Predictive Modeling</li><li>LLM Integration</li>
+    </ul>
+  </section>
+
+  <section id="projects">
+    <div class="label">Projects</div>
+    <h2>Work I've built</h2>
+    <article class="project">
+      <div>
+        <h3>Banking System</h3>
+        <p>A mini project built in C — covers account creation, deposits, withdrawals and balance checks, with account records stored in files.</p>
+        <ul class="chips"><li>C</li><li>Data Structures</li><li>File Handling</li></ul>
+      </div>
+<pre>$ ./banking_system
+
+  BANKING SYSTEM
+  --------------
+  1. Create account
+  2. Deposit
+  3. Withdraw
+  4. Check balance
+  0. Exit
+
+  Enter choice: _</pre>
+    </article>
+  </section>
+
+  <section id="education">
+    <div class="label">Education</div>
+    <h2>Academic record</h2>
+    <div class="edu">
+      <div>
+        <strong>6.5</strong>
+        <h3>Current CGPA</h3>
+        <p>Computer Science &amp; Engineering — ongoing</p>
+      </div>
+      <div>
+        <strong>93.5%</strong>
+        <h3>Higher Secondary Certificate (HSC)</h3>
+        <p>561 / 600 marks</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="label">Get in touch</div>
+    <h2>Let's build something reliable together.</h2>
+    <p>Open to internships, entry-level AI/ML roles, and any team that wants someone who cares about getting the data right.</p>
+    <div class="actions">
+      <a class="btn primary" href="mailto:ravikanthramasamy2007@gmail.com">Email me</a>
+    </div>
+    <p style="margin-top:14px">ravikanthramasamy2007@gmail.com</p>
+  </section>
+</main>
+
+<footer>© 2026 Ravikanth R. Personal portfolio.</footer>
+
+</body>
+</html>
